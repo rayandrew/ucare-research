@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # creating dirs
-mkdir temp-jdk
+mkdir -p temp-jdk
 
 # download zulu
 wget https://cdn.azul.com/zulu/bin/zulu7.29.0.5-ca-jdk7.0.222-linux_amd64.deb -O temp-jdk/jdk7.deb
@@ -21,3 +21,6 @@ sudo apt-get update && sudo apt-get --fix-broken install \
 
 # install jdk7
 sudo dpkg -i temp-jdk/jdk7.deb
+
+# remove tmp
+rm -rf temp-jdk
