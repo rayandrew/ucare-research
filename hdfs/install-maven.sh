@@ -12,6 +12,8 @@ DEST_FOLDER="/opt"
 M2_HOME="/opt/maven"
 BASHRC="~/.bashrc"
 
+sudo rm -rf /opt/maven && sudo rm -rf /opt/apache-maven-$MAVEN_VERSION
+
 # make temp
 mkdir $TEMP_FOLDER
 
