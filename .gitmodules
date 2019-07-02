@@ -1,0 +1,3 @@
+[submodule "hdfs/source"]
+	path = hdfs/source
+	url = git@github.com:rayandrews/custom-hadoop.git
