@@ -10,7 +10,7 @@ MAVEN_VERSION="3.6.1"
 JAVA_DIR="zulu-7-amd64"
 DEST_FOLDER="/opt"
 M2_HOME="/opt/maven"
-BASHRC="~/.bashrc"
+BASHRC="$HOME/.bashrc"
 
 sudo rm -rf /opt/maven && sudo rm -rf /opt/apache-maven-$MAVEN_VERSION
 
