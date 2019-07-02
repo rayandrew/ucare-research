@@ -10,7 +10,7 @@ MAVEN_VERSION="3.6.1"
 JAVA_DIR="zulu-7-amd64"
 DEST_FOLDER="/opt"
 M2_HOME="/opt/maven"
-MAVEN_PROFILE="/etc/profile.d/maven.sh"
+BASHRC="~/.bashrc"
 
 # make temp
 mkdir $TEMP_FOLDER
@@ -26,16 +26,19 @@ sudo tar xvf $TEMP_FOLDER/maven-$MAVEN_VERSION.tar.gz -C $DEST_FOLDER
 sudo ln -s /opt/apache-maven-$MAVEN_VERSION /opt/maven
 
 # create profile
-sudo echo "export JAVA_HOME=/usr/lib/jvm/$JAVA_DIR" >>$MAVEN_PROFILE
-sudo echo "export M2_HOME=${M2_HOME}" >>$MAVEN_PROFILE
-sudo echo "export MAVEN_HOME=${M2_HOME}" >>$MAVEN_PROFILE
-sudo echo "export PATH=${M2_HOME}/bin:${PATH}" >>$MAVEN_PROFILE
+check_var_exist $JAVA_HOME $(echo "export JAVA_HOME=/usr/lib/jvm/$JAVA_DIR" >>$BASHRC)
+check_var_exist $M2_HOME \
+  $(
+    echo "export M2_HOME=${M2_HOME}" >>$BASHRC
+    echo "export JAVA_HOME=/usr/lib/jvm/$JAVA_DIR" >>$BASHRC
+    echo "export PATH=${M2_HOME}/bin:${PATH}" >>$BASHRC
+  )
 
 # chmod
-sudo chmod +x $MAVEN_PROFILE
+# sudo chmod +x $MAVEN_PROFILE
 
 # source file
-source $MAVEN_PROFILE
+source $BASHRC
 
 # # check installation
 check_program mvn || {
