@@ -16,7 +16,8 @@ sudo apt-get update && sudo apt-get --fix-broken install \
   libxtst6 \
   x11-common \
   libfontconfig1 \
-  fontconfig-config
+  fontconfig-config \
+  fonts-dejavu-core
 
 # install jdk7
 sudo dpkg -i temp-jdk/jdk7.deb
