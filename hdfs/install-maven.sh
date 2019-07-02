@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "_utils.sh"
+
 TEMP_FOLDER="temp-maven"
 MAVEN_VERSION="3.6.1"
 JAVA_DIR="zulu-7-amd64"
@@ -29,9 +31,8 @@ sudo chmod +x $MAVEN_PROFILE
 source $MAVEN_PROFILE
 
 # check installation
-command -v mvn >/dev/null 2>&1 || {
-  echo >&2 "Maven installation failed.  Aborting."
-  exit 1
+check_program mvn || {
+  echo >&2 "Maven program not found.  Aborting."
 }
 
 # remove tmp

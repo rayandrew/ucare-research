@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "_utils.sh"
+
 TEMP_FOLDER="temp-protobuf"
 PROTOBUF_VERSION="2.5.0"
 
@@ -26,12 +28,11 @@ cd $TEMP_FOLDER/protobuf-$PROTOBUF_VERSION
 ./configure --prefix=/usr
 
 # make and install
-make && make install
+sudo make && sudo make install
 
 # check installation
-command -v protoc >/dev/null 2>&1 || {
-  echo >&2 "Protobuf installation failed.  Aborting."
-  exit 1
+check_program protoc || {
+  echo >&2 "Protoc program not found.  Aborting."
 }
 
 # remove dir

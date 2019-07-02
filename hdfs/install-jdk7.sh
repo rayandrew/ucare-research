@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "_utils.sh"
+
 TEMP_FOLDER="temp-jdk"
 JDK_VERSION="7.0.222"
 
@@ -26,7 +28,7 @@ sudo apt-get update && sudo apt-get --fix-broken install \
 sudo dpkg -i $TEMP_FOLDER/jdk$JDK_VERSION.deb
 
 # check installation
-command -v java >/dev/null 2>&1 || {
+check_program java || {
   echo >&2 "Java installation failed.  Aborting."
   exit 1
 }
