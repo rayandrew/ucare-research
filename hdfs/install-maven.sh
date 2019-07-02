@@ -9,6 +9,7 @@ TEMP_FOLDER="temp-maven"
 MAVEN_VERSION="3.6.1"
 JAVA_DIR="zulu-7-amd64"
 DEST_FOLDER="/opt"
+M2_HOME="/opt/maven"
 MAVEN_PROFILE="/etc/profile.d/maven.sh"
 
 # make temp
@@ -26,8 +27,8 @@ sudo ln -s /opt/apache-maven-$MAVEN_VERSION /opt/maven
 
 # create profile
 sudo echo "export JAVA_HOME=/usr/lib/jvm/$JAVA_DIR" >>$MAVEN_PROFILE
-sudo echo "export M2_HOME=/opt/maven" >>$MAVEN_PROFILE
-sudo echo "export MAVEN_HOME=/opt/maven" >>$MAVEN_PROFILE
+sudo echo "export M2_HOME=${M2_HOME}" >>$MAVEN_PROFILE
+sudo echo "export MAVEN_HOME=${M2_HOME}" >>$MAVEN_PROFILE
 sudo echo "export PATH=${M2_HOME}/bin:${PATH}" >>$MAVEN_PROFILE
 
 # chmod
