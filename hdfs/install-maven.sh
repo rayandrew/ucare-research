@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source "_utils.sh"
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+
+source "$DIR/_utils.sh"
 
 TEMP_FOLDER="temp-maven"
 MAVEN_VERSION="3.6.1"
@@ -30,7 +33,7 @@ sudo chmod +x $MAVEN_PROFILE
 # source file
 source $MAVEN_PROFILE
 
-# check installation
+# # check installation
 check_program mvn || {
   echo >&2 "Maven program not found.  Aborting."
 }

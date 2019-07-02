@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source "_utils.sh"
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+
+source "$DIR/_utils.sh"
 
 TEMP_FOLDER="temp-jdk"
 JDK_VERSION="7.0.222"
