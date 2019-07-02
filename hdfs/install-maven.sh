@@ -12,7 +12,7 @@ DEST_FOLDER="/opt"
 MAVEN_PROFILE="/etc/profile.d/maven.sh"
 
 # download maven
-wget https://www-us.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz \
+wget https://www-us.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz \
   -O $TEMP_FOLDER/maven-$MAVEN_VERSION.tar.gz
 
 # Untar
@@ -38,6 +38,8 @@ check_program mvn || {
   echo >&2 "Maven program not found.  Aborting."
   exit 1
 }
+
+echo "Maven installation succeed!"
 
 # remove tmp
 rm -rf $TEMP_FOLDER

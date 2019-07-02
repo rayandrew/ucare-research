@@ -35,9 +35,11 @@ sudo make && sudo make install
 
 # check installation
 check_program protoc || {
-  echo >&2 "Protoc program not found.  Aborting."
+  echo >&2 "Protobuf program not found.  Aborting."
   exit 1
 }
+
+echo "Protobuf installation succeed!"
 
 # remove dir
 rm -rf $TEMP_FOLDER

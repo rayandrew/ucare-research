@@ -36,5 +36,7 @@ check_program java || {
   exit 1
 }
 
+echo "Java installation succeed!"
+
 # remove tmp
 rm -rf $TEMP_FOLDER
