@@ -11,12 +11,15 @@ JAVA_DIR="zulu-7-amd64"
 DEST_FOLDER="/opt"
 MAVEN_PROFILE="/etc/profile.d/maven.sh"
 
+# make temp
+mkdir $TEMP_FOLDER
+
 # download maven
 wget https://www-us.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz \
   -O $TEMP_FOLDER/maven-$MAVEN_VERSION.tar.gz
 
 # Untar
-tar xvf $TEMP_FOLDER/maven-$MAVEN_VERSION.tar.gz -C $DEST_FOLDER
+sudo tar xvf $TEMP_FOLDER/maven-$MAVEN_VERSION.tar.gz -C $DEST_FOLDER
 
 # Make link
 sudo ln -s /opt/apache-maven-$MAVEN_VERSION /opt/maven
