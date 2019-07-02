@@ -26,9 +26,10 @@ sudo apt-get update && sudo apt-get --fix-broken install \
 sudo dpkg -i $TEMP_FOLDER/jdk$JDK_VERSION.deb
 
 # check installation
-if which java &>/dev/null; then
+command -v java >/dev/null 2>&1 || {
+  echo >&2 "Java installation failed.  Aborting."
   exit 1
-fi
+}
 
 # remove tmp
 rm -rf $TEMP_FOLDER

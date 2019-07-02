@@ -29,9 +29,10 @@ cd $TEMP_FOLDER/protobuf-$PROTOBUF_VERSION
 make && make install
 
 # check installation
-if which protoc &>/dev/null; then
+command -v protoc >/dev/null 2>&1 || {
+  echo >&2 "Protobuf installation failed.  Aborting."
   exit 1
-fi
+}
 
 # remove dir
 rm -rf $TEMP_FOLDER
