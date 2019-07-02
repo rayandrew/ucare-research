@@ -1,10 +1,13 @@
 #!/bin/bash
 
+TEMP_FOLDER="temp-jdk"
+JDK_VERSION="7.0.222"
+
 # creating dirs
-mkdir -p temp-jdk
+mkdir -p $TEMP_FOLDER
 
 # download zulu
-wget https://cdn.azul.com/zulu/bin/zulu7.29.0.5-ca-jdk7.0.222-linux_amd64.deb -O temp-jdk/jdk7.deb
+wget https://cdn.azul.com/zulu/bin/zulu7.29.0.5-ca-jdk$JDK_VERSION-linux_amd64.deb -O $TEMP_FOLDER/jdk$JDK_VERSION.deb
 
 # install deps
 sudo apt-get update && sudo apt-get --fix-broken install \
@@ -20,7 +23,12 @@ sudo apt-get update && sudo apt-get --fix-broken install \
   fonts-dejavu-core
 
 # install jdk7
-sudo dpkg -i temp-jdk/jdk7.deb
+sudo dpkg -i $TEMP_FOLDER/jdk$JDK_VERSION.deb
+
+# check installation
+if which java &>/dev/null; then
+  exit 1
+fi
 
 # remove tmp
-rm -rf temp-jdk
+rm -rf $TEMP_FOLDER
