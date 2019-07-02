@@ -36,6 +36,7 @@ source $MAVEN_PROFILE
 # # check installation
 check_program mvn || {
   echo >&2 "Maven program not found.  Aborting."
+  exit 1
 }
 
 # remove tmp

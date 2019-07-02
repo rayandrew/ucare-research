@@ -36,6 +36,7 @@ sudo make && sudo make install
 # check installation
 check_program protoc || {
   echo >&2 "Protoc program not found.  Aborting."
+  exit 1
 }
 
 # remove dir
