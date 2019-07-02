@@ -5,6 +5,9 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
 source "$DIR/_utils.sh"
 
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+
 cd "$DIR/source"
 
 # check installation
