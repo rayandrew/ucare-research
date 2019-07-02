@@ -3,6 +3,9 @@
 TEMP_FOLDER="temp-protobuf"
 PROTOBUF_VERSION="2.5.0"
 
+# install build essentials
+sudo apt-get update && sudo apt-get install build-essential -y
+
 # creating dirs
 mkdir -p $TEMP_FOLDER
 
