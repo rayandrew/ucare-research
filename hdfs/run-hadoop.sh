@@ -11,12 +11,14 @@ DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
 HADOOP_HOME="$DIR/source/hadoop-dist/target/hadoop-2.7.1"
-DN_DIR_PREFIX="$DIR/dn_temp/"
+DN_DIR_PREFIX="/tmp/dn_temp/"
 
 if [ -z $DN_DIR_PREFIX ]; then
   echo $0: DN_DIR_PREFIX is not set. set it to something like "/hadoopTmp/dn"
   exit 1
 fi
+
+mkdir -p DN_DIR_PREFIX
 
 run_datanode() {
   DN=$2
