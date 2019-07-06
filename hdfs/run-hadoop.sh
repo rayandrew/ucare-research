@@ -11,6 +11,7 @@ DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
 HADOOP_HOME="$DIR/source/hadoop-dist/target/hadoop-2.7.1"
+JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
 DN_DIR_PREFIX="/tmp/dn_temp/"
 
 if [ -z $DN_DIR_PREFIX ]; then
@@ -32,10 +33,17 @@ run_datanode() {
   $HADOOP_HOME/sbin/hadoop-daemon.sh --script $HADOOP_HOME/bin/hdfs $1 datanode $DN_CONF_OPTS
 }
 
-cmd=$1
-# shift
+echo "Moving conf file"
+mv "$HADOOP_HOME/etc/hadoop/core-site.xml" "$HADOOP_HOME/etc/hadoop/core-site.bak.xml"
+cp "$DIR/conf/core-site.xml" "$HADOOP_HOME/etc/hadoop"
+
+mv "$HADOOP_HOME/etc/hadoop/hdfs-site.xml" "$HADOOP_HOME/etc/hadoop/hdfs-site.bak.xml"
+cp "$DIR/conf/hdfs-site.xml" "$HADOOP_HOME/etc/hadoop"
 
 $HADOOP_HOME/sbin/start-dfs.sh
+
+cmd=$1
+# shift
 
 sleep 2
 
