@@ -10,6 +10,7 @@
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
+HADOOP_HOME="$DIR/source/hadoop-dist/target/hadoop-2.7.1"
 DN_DIR_PREFIX="$DIR/dn_temp/"
 
 if [ -z $DN_DIR_PREFIX ]; then
@@ -25,7 +26,7 @@ run_datanode() {
 -Dhadoop.tmp.dir=$DN_DIR_PREFIX$DN-Ddfs.datanode.address=0.0.0.0:5001$DN \
 -Ddfs.datanode.http.address=0.0.0.0:5008$DN \
 -Ddfs.datanode.ipc.address=0.0.0.0:5002$DN"
-  bin/hadoop-daemon.sh --script bin/hdfs $1 datanode $DN_CONF_OPTS
+  $HADOOP_HOME/sbin/hadoop-daemon.sh --script $HADOOP_HOME/bin/hdfs $1 datanode $DN_CONF_OPTS
 }
 
 cmd=$1
