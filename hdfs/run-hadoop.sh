@@ -1,6 +1,6 @@
 # Taken from https://bigdata.wordpress.com/2010/05/27/hadoop-cookbook-4-how-to-run-multiple-data-nodes-on-one-machine/
 
-#!/bin/sh
+#!/bin/bash
 # This is used for starting multiple datanodes on the same machine.
 # run it from hadoop-dir/ just like 'bin/hadoop'
 
@@ -34,6 +34,10 @@ run_datanode() {
 
 cmd=$1
 # shift
+
+$HADOOP_HOME/sbin/start-dfs.sh
+
+sleep 2
 
 for ((i = 1; i <= $2; i++)); do
   run_datanode $cmd $i
