@@ -31,7 +31,7 @@ cd $TEMP_FOLDER/protobuf-$PROTOBUF_VERSION
 ./configure --prefix=/usr
 
 # make and install
-sudo make && sudo make install
+sudo make && sudo make check && sudo make install
 
 # check installation
 check_program protoc || {

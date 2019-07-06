@@ -5,6 +5,7 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
 source "$DIR/_utils.sh"
 
+# we set dir 2 times to include files
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
@@ -18,5 +19,5 @@ check_program mvn || {
 
 # Compiling maven
 echo "Compiling Hadoop"
-mvn package -Pdist -DskipTests -Dtar
+mvn -Dhttps.protocols=TLSv1.2 package -Pdist -DskipTests -Dtar
 echo "Hadoop has been compiled!"
