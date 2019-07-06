@@ -25,7 +25,8 @@ run_datanode() {
   export HADOOP_LOG_DIR=$DN_DIR_PREFIX$DN/logs
   export HADOOP_PID_DIR=$HADOOP_LOG_DIR
   DN_CONF_OPTS="\
-  -Dhadoop.tmp.dir=$DN_DIR_PREFIX$DN-Ddfs.datanode.address=0.0.0.0:5001$DN \
+  -Dhadoop.tmp.dir=$DN_DIR_PREFIX$DN \
+  -Ddfs.datanode.address=0.0.0.0:5001$DN \
   -Ddfs.datanode.http.address=0.0.0.0:5008$DN \
   -Ddfs.datanode.ipc.address=0.0.0.0:5002$DN"
   $HADOOP_HOME/sbin/hadoop-daemon.sh --script $HADOOP_HOME/bin/hdfs $1 datanode $DN_CONF_OPTS
