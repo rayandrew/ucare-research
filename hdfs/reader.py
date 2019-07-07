@@ -39,12 +39,14 @@ if __name__ == '__main__':
 
     mems = []
 
+    # master
     line = _read_logs_2(os.path.join(
         args.logs_dir, 'hadoop-{}.log'.format(args.cluster_name)))
 
+    # slaves
     for i in range(1, args.node_count + 1):
         line = _read_logs_2(os.path.join(
-            args.logs_dir, 'slaves-{}'.format(i), 'hadoop-{}.log'.format(args.cluster_name)))
+            args.logs_dir, 'logs', 'slaves-{}'.format(i), 'hadoop-{}.log'.format(args.cluster_name)))
         if line is not None:
             digs = [int(s) for s in line.split(' ') if s.isdigit()]
             mems.append(digs[0])
