@@ -14,6 +14,7 @@ export PROJ_DIR="/mnt/extra/ucare-research/hdfs"
 
 export HADOOP_HOME="$PROJ_DIR/source/hadoop-dist/target/hadoop-2.7.1"
 export HADOOP_CONF_DIR="$PROJ_DIR/source/hadoop-dist/target/hadoop-2.7.1/etc/hadoop"
+export HADOOP_LOG_DIR="/mnt/extra/logs/master"
 
 export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
 export DN_DIR_PREFIX="/mnt/extra/logs/slaves"
@@ -49,6 +50,8 @@ run_datanode() {
   -Ddfs.datanode.ipc.address=0.0.0.0:5002$DN"
   $HADOOP_HOME/sbin/hadoop-daemon.sh --script $HADOOP_HOME/bin/hdfs $1 datanode $DN_CONF_OPTS
 }
+
+run_master
 
 cmd=$1
 
