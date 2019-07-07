@@ -1,3 +1,6 @@
 [submodule "hdfs/source"]
 	path = hdfs/source
 	url = git@github.com:rayandrews/custom-hadoop.git
+[submodule "cassandra/source"]
+	path = cassandra/source
+	url = git@github.com:rayandrews/custom-cassandra.git
