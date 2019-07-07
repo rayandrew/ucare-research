@@ -72,4 +72,4 @@ if __name__ == '__main__':
     print('NN used ', nn_mems)
     print('List of dn mems used ', dn_mems)
     print('Total memory used for {} is {} MB'.format(
-        args.node_count, sum(dn_mems) + nn_mems))
+        args.additional_datanode + 1, sum(dn_mems) + nn_mems))
