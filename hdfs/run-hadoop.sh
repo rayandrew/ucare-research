@@ -24,7 +24,8 @@ if [ -z $DN_DIR_PREFIX ]; then
   exit 1
 fi
 
-mkdir -p $HADOOP_LOG_DIR
+rm -rf $HADOOP_HOME/logs
+mkdir -p $HADOOP_HOME/logs
 # mkdir -p $DN_DIR_PREFIX
 
 echo "Moving conf file"
