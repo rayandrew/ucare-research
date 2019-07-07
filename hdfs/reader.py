@@ -31,31 +31,44 @@ if __name__ == '__main__':
 
     parser.add_argument('--node_count', '-nc', default=5,
                         type=int, help='HDFS Node Count')
-    parser.add_argument('--cluster_name', '-cn',
+    parser.add_argument('--namenode_name', '-nn',
+                        default='hsgucare-namenode-node-0.j8gc.ucare.emulab.net', help='cluster name')
+    parser.add_argument('--datanode_name', '-dn',
                         default='hsgucare-datanode-node-0.j8gc.ucare.emulab.net', help='cluster name')
     parser.add_argument('--logs_dir', '-cd',
                         default='/mnt/extra/ucare-research/hdfs/source/hadoop-dist/target/hadoop-2.7.1/logs/', help='hdfs logs dir')
     args = parser.parse_args()
 
-    mems = []
+    nn_mems = 0
+    dn_mems = []
 
-    # master
+    # namenode
     line = _read_logs_2(os.path.join(
-        args.logs_dir, 'hadoop-{}.log'.format(args.cluster_name)))
+        args.logs_dir, 'hadoop-{}.log'.format(args.namenode_name)))
 
     if line is not None:
         digs = [int(s) for s in line.split(' ') if s.isdigit()]
-        mems.append(digs[0])
+        nn_mems = digs[0]
+
+    # datanode
+    line = _read_logs_2(os.path.join(
+        args.logs_dir, 'hadoop-{}.log'.format(args.datanode_name)))
+
+    if line is not None:
+        digs = [int(s) for s in line.split(' ') if s.isdigit()]
+        dn_mems.append(digs[0])
 
     # slaves
     for i in range(1, args.node_count + 1):
         line = _read_logs_2(os.path.join(
-            args.logs_dir, 'slaves-{}'.format(i), 'logs', 'hadoop-{}.log'.format(args.cluster_name)))
+            args.logs_dir, 'slaves-{}'.format(i), 'logs', 'hadoop-{}.log'.format(args.datanode_name)))
         if line is not None:
             digs = [int(s) for s in line.split(' ') if s.isdigit()]
-            mems.append(digs[0])
+            dn_mems.append(digs[0])
 
-    assert len(mems) == args.node_count + 1, 'All nodes are not up yet'
+    assert len(dn_mems) == args.node_count + 1, 'All nodes are not up yet'
 
-    print('List of mem used ', mems)
-    print('Total memory used for {} is {} MB'.format(args.node_count, sum(mems)))
+    print('NN used ', nn_mems)
+    print('List of dn mems used ', dn_mems)
+    print('Total memory used for {} is {} MB'.format(
+        args.node_count, sum(dn_mems) + nn_mems))
