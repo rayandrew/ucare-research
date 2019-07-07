@@ -29,7 +29,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='[HDFS] - Memory Reader')
 
-    parser.add_argument('--node_count', '-nc', default=5,
+    parser.add_argument('--additional_datanode', '-adn', default=4,
                         type=int, help='HDFS Node Count')
     parser.add_argument('--namenode_name', '-nn',
                         default='hsgucare-namenode-node-0.j8gc.ucare.emulab.net', help='cluster name')
@@ -59,14 +59,15 @@ if __name__ == '__main__':
         dn_mems.append(digs[0])
 
     # slaves
-    for i in range(1, args.node_count + 1):
+    for i in range(1, args.additional_datanode + 1):
         line = _read_logs_2(os.path.join(
             args.logs_dir, 'slaves-{}'.format(i), 'logs', 'hadoop-{}.log'.format(args.datanode_name)))
         if line is not None:
             digs = [int(s) for s in line.split(' ') if s.isdigit()]
             dn_mems.append(digs[0])
 
-    assert len(dn_mems) == args.node_count + 1, 'All nodes are not up yet'
+    assert len(dn_mems) == args.additional_datanode + \
+        1, 'All nodes are not up yet'
 
     print('NN used ', nn_mems)
     print('List of dn mems used ', dn_mems)
