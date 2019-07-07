@@ -14,10 +14,10 @@ export PROJ_DIR="/mnt/extra/ucare-research/hdfs"
 
 export HADOOP_HOME="$PROJ_DIR/source/hadoop-dist/target/hadoop-2.7.1"
 export HADOOP_CONF_DIR="$PROJ_DIR/source/hadoop-dist/target/hadoop-2.7.1/etc/hadoop"
-export HADOOP_LOG_DIR="/mnt/extra/logs/master"
+# export HADOOP_LOG_DIR="/mnt/extra/logs/master"
 
 export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
-export DN_DIR_PREFIX="/mnt/extra/logs/slaves"
+export DN_DIR_PREFIX="$PROJ_DIR/source/hadoop-dist/target/hadoop-2.7.1/logs/slaves-"
 
 if [ -z $DN_DIR_PREFIX ]; then
   echo $0: DN_DIR_PREFIX is not set. set it to something like "/hadoopTmp/dn"
