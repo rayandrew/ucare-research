@@ -10,7 +10,7 @@
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
-$PROJ_DIR="/mnt/extra/ucare-research"
+PROJ_DIR="/mnt/extra/ucare-research"
 
 export HADOOP_HOME="$PROJ_DIR/source/hadoop-dist/target/hadoop-2.7.1"
 export HADOOP_CONF_DIR="$PROJ_DIR/source/hadoop-dist/target/hadoop-2.7.1/etc/hadoop"
