@@ -25,7 +25,7 @@ if [ -z $DN_DIR_PREFIX ]; then
 fi
 
 mkdir -p $HADOOP_LOG_DIR
-mkdir -p $DN_DIR_PREFIX
+# mkdir -p $DN_DIR_PREFIX
 
 echo "Moving conf file"
 mv "$HADOOP_HOME/etc/hadoop/core-site.xml" "$HADOOP_HOME/etc/hadoop/core-site.bak.xml"
