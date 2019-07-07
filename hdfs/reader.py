@@ -43,6 +43,10 @@ if __name__ == '__main__':
     line = _read_logs_2(os.path.join(
         args.logs_dir, 'hadoop-{}.log'.format(args.cluster_name)))
 
+    if line is not None:
+        digs = [int(s) for s in line.split(' ') if s.isdigit()]
+        mems.append(digs[0])
+
     # slaves
     for i in range(1, args.node_count + 1):
         line = _read_logs_2(os.path.join(
