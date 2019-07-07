@@ -40,16 +40,16 @@ if __name__ == '__main__':
     mems = []
 
     line = _read_logs_2(os.path.join(
-        args.logs_dir, 'hadoop-', args.cluster_name, '.log'))
+        args.logs_dir, 'hadoop-', args.cluster_name + '.log'))
 
     for i in range(1, args.node_count + 1):
         line = _read_logs_2(os.path.join(
-            args.logs_dir, 'slaves-{}'.format(i), args.cluster_name, '.log'))
+            args.logs_dir, 'slaves-{}'.format(i), args.cluster_name + '.log'))
         if line is not None:
             digs = [int(s) for s in line.split(' ') if s.isdigit()]
             mems.append(digs[0])
 
-    assert len(mems) == args.node_count, 'All nodes are not up yet'
+    assert len(mems) == args.node_count + 1, 'All nodes are not up yet'
 
     print('List of mem used ', mems)
     print('Total memory used for {} is {} MB'.format(args.node_count, sum(mems)))
