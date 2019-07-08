@@ -1,7 +1,10 @@
 {
   "folders": [
     {
-      "path": "hdfs"
+      "path": "/Users/rayandrew/Projects/research"
+    },
+    {
+      "path": "/Users/rayandrew/Projects/custom-hadoop"
     }
   ],
   "settings": {}
