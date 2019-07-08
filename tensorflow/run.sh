@@ -4,16 +4,20 @@
 
 task_count=$1
 
-for ((i = 10; i <= $task_count; i += 10)); do
-  for ((j = 0; j <= $i; j++)); do
-    python3 cluster.py $task_count $j &
-  done
+# for ((i = 10; i <= $task_count; i += 10)); do
+#   for ((j = 0; j <= $i; j++)); do
+#     python3 cluster.py $task_count $j &
+#   done
+# done
+
+for ((j = 0; j <= $task_count; j++)); do
+  python3 cluster.py $task_count $j &
 done
 
-echo "SLEEPING for 10s"
+# echo "SLEEPING for 10s"
 
-sleep 10
+# sleep 10
 
-echo "READ MEM USAGE"
+# echo "READ MEM USAGE"
 
-ps_mem -p $(pgrep -d, -f python)
+# ps_mem -p $(pgrep -d, -f python)
