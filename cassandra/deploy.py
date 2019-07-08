@@ -2,6 +2,7 @@ import os
 import argparse
 import mmap
 import time
+import csv
 
 import itertools
 
@@ -150,29 +151,38 @@ if __name__ == '__main__':
                         default='/mnt/extra/working', help='ccm conf dir')
     args = parser.parse_args()
 
-    for node_count in range(10, args.node_count + 10, 10):
-        print('Starting Cluster consists of {} nodes'.format(node_count))
-        cluster = deploy_cluster(args, node_count)
+    # result = []
 
-        print('Delay about 1 minute before trying to read memory logs')
-        time.sleep(60)
+    with open('result.csv', mode='w') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=['nodes', 'mems'])
+        writer.writeheader()
 
-        print('Start reading the logs')
+        for node_count in range(10, args.node_count + 10, 10):
+            print('Starting Cluster consists of {} nodes'.format(node_count))
+            cluster = deploy_cluster(args, node_count)
 
-        mems = []
+            print('Delay about 1 minute before trying to read memory logs')
+            time.sleep(60)
 
-        while True:
-            mems = log_parser(args, node_count)
-            time.sleep(2)
-            if len(mems) == node_count:
-                break
+            print('Start reading the logs')
 
-        print('List of mem used ', mems)
-        print('Total memory used for {} nodes is : {} MB'.format(
-            node_count, sum(mems)))
+            mems = []
 
-        print('Stopping and Remove Cluster')
-        stop_remove_cluster(cluster)
+            while True:
+                mems = log_parser(args, node_count)
+                time.sleep(2)
+                if len(mems) == node_count:
+                    break
 
-        print('Delaying 10 secs before spawning another cluster\n')
-        time.sleep(10)
+            total_mems = sum(mems)
+            print('List of mem used ', mems)
+            print('Total memory used for {} nodes is : {} MB'.format(
+                node_count, total_mems))
+
+            writer.writerow({'nodes': node_count, 'mems': total_mems})
+
+            print('Stopping and Remove Cluster')
+            stop_remove_cluster(cluster)
+
+            print('Delaying 10 secs before spawning another cluster\n')
+            time.sleep(10)
