@@ -151,8 +151,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     for node_count in range(10, args.node_count + 10, 10):
-        print('Starting Cluster consists of {} nodes'.format(node_count + 10))
-        cluster = deploy_cluster(args, node_count + 10)
+        print('Starting Cluster consists of {} nodes'.format(node_count))
+        cluster = deploy_cluster(args, node_count)
 
         print('Delay about 1 minute before trying to read memory logs')
         time.sleep(60)
@@ -162,14 +162,14 @@ if __name__ == '__main__':
         mems = []
 
         while True:
-            mems = log_parser(args, node_count + 10)
+            mems = log_parser(args, node_count)
             time.sleep(2)
-            if len(mems) == (node_count + 10):
+            if len(mems) == node_count:
                 break
 
         print('List of mem used ', mems)
         print('Total memory used for {} nodes is : {} MB'.format(
-            node_count + 10, sum(mems)))
+            node_count, sum(mems)))
 
         print('Stopping and Remove Cluster')
         stop_remove_cluster(cluster)
