@@ -9,6 +9,7 @@ from ccmlib.cluster import Cluster
 from ccmlib import common, extension, repository
 from ccmlib.node import Node, NodeError, TimeoutError
 
+
 class CustomCluster(Cluster):
     def __update_pids(self, started):
         for node, p, _ in started:
@@ -38,7 +39,8 @@ class CustomCluster(Cluster):
                 if os.path.exists(node.logfilename()):
                     mark = node.mark_log()
 
-                p = node.start(update_pid=False, jvm_args=jvm_args, profile_options=profile_options, verbose=verbose, quiet_start=quiet_start, allow_root=allow_root)
+                p = node.start(update_pid=False, jvm_args=jvm_args, profile_options=profile_options,
+                               verbose=verbose, quiet_start=quiet_start, allow_root=allow_root)
 
                 # Prior to JDK8, starting every node at once could lead to a
                 # nanotime collision where the RNG that generates a node's tokens
@@ -48,17 +50,20 @@ class CustomCluster(Cluster):
 
                 # [RAYANDREW] modify this
                 # print('Waiting 10s before starting other node')
-                time.sleep(10) # wait 10 seconds before starting other node
+                time.sleep(10)  # wait 10 seconds before starting other node
 
                 started.append((node, p, mark))
 
         if no_wait:
-            time.sleep(2)  # waiting 2 seconds to check for early errors and for the pid to be set
+            # waiting 2 seconds to check for early errors and for the pid to be set
+            time.sleep(2)
         else:
             for node, p, mark in started:
                 try:
-                    start_message = "Listening for thrift clients..." if self.cassandra_version() < "2.2" else "Starting listening for CQL clients"
-                    node.watch_log_for(start_message, timeout=kwargs.get('timeout',60), process=p, verbose=verbose, from_mark=mark)
+                    start_message = "Listening for thrift clients..." if self.cassandra_version(
+                    ) < "2.2" else "Starting listening for CQL clients"
+                    node.watch_log_for(start_message, timeout=kwargs.get(
+                        'timeout', 60), process=p, verbose=verbose, from_mark=mark)
                 except RuntimeError:
                     return None
 
@@ -75,12 +80,13 @@ class CustomCluster(Cluster):
 
             if wait_for_binary_proto:
                 for node, p, mark in started:
-                    node.wait_for_binary_interface(process=p, verbose=verbose, from_mark=mark)
+                    node.wait_for_binary_interface(
+                        process=p, verbose=verbose, from_mark=mark)
 
         extension.post_cluster_start(self)
 
         return started
-    
+
 
 def _read_logs(filename, text='Used Memory'):
     line = None
@@ -90,26 +96,30 @@ def _read_logs(filename, text='Used Memory'):
 
     return line
 
+
 def _read_logs_2(filename, text='Used Memory'):
     with open(filename, 'r') as f:
         # memory-map the file, size 0 means whole file
-        m = mmap.mmap(f.fileno(), 0, prot=mmap.PROT_READ)  
-                            # prot argument is *nix only
+        m = mmap.mmap(f.fileno(), 0, prot=mmap.PROT_READ)
+        # prot argument is *nix only
 
         i = m.rfind(b'Used Memory')   # search for last occurrence of 'word'
         m.seek(i)             # seek to the location
         line = m.readline()   # read to the end of the line
         return str(line)
 
+
 def log_parser(args, node_count):
     mems = []
 
     for i in range(node_count):
-        line = _read_logs(os.path.join(args.cluster_path, args.cluster_name, 'node{}'.format(i + 1), 'logs', 'system.log'))
+        line = _read_logs(os.path.join(
+            args.cluster_path, args.cluster_name, 'node{}'.format(i + 1), 'logs', 'system.log'))
         if line is not None:
             mem_digits = [int(s) for s in line.split(' ') if s.isdigit()]
             mems.append(mem_digits[0])
     return mems
+
 
 def deploy_cluster(args, node_count):
     cluster = CustomCluster(
@@ -120,21 +130,27 @@ def deploy_cluster(args, node_count):
 
     return cluster
 
+
 def stop_remove_cluster(cluster):
     cluster.stop()
     cluster.remove()
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='[Cassandra] - Memory Reader')
 
-    parser.add_argument('--node_count', '-nc', default=5, type=int, help='Cassandra Node Count')
-    parser.add_argument('--cassandra_dir', '-cd', default='/mnt/extra/cassandra', help='cassandra source dir')
-    parser.add_argument('--cluster_name', '-cn', default='test', help='cluster name')
-    parser.add_argument('--cluster_path', '-cp', default='/mnt/extra/working', help='ccm conf dir')
+    parser.add_argument('--node_count', '-nc', default=5,
+                        type=int, help='Cassandra Node Count')
+    parser.add_argument('--cassandra_dir', '-cd',
+                        default='/mnt/extra/cassandra', help='cassandra source dir')
+    parser.add_argument('--cluster_name', '-cn',
+                        default='test', help='cluster name')
+    parser.add_argument('--cluster_path', '-cp',
+                        default='/mnt/extra/working', help='ccm conf dir')
     args = parser.parse_args()
 
-    for node_count in range(-5, args.node_count - 5, 5):
+    for node_count in range(0, args.node_count + 10, 10):
         print('Starting Cluster consists of {} nodes'.format(node_count + 10))
         cluster = deploy_cluster(args, node_count + 10)
 
@@ -152,7 +168,8 @@ if __name__ == '__main__':
                 break
 
         print('List of mem used ', mems)
-        print('Total memory used for {} nodes is : {} MB'.format(node_count + 10, sum(mems)))
+        print('Total memory used for {} nodes is : {} MB'.format(
+            node_count + 10, sum(mems)))
 
         print('Stopping and Remove Cluster')
         stop_remove_cluster(cluster)
