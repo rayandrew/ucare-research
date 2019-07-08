@@ -4,7 +4,7 @@
 
 task_count=$1
 
-for ((i = 1; i <= $task_count; i += 10)); do
+for ((i = 10; i <= $task_count; i += 10)); do
   for ((j = 1; j <= $i; j++)); do
     python3 cluster.py $task_count $j &
   done
