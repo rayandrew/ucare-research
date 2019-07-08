@@ -5,5 +5,5 @@
 
 run:
 	for i in `seq 1 ${task_number}` ; do \
-		python3 cluster.py ${task_number} ${task_number} & \
+		python3 cluster.py ${task_number} ${i} & \
 	done
