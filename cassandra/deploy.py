@@ -150,7 +150,7 @@ if __name__ == '__main__':
                         default='/mnt/extra/working', help='ccm conf dir')
     args = parser.parse_args()
 
-    for node_count in range(0, args.node_count + 10, 10):
+    for node_count in range(10, args.node_count + 10, 10):
         print('Starting Cluster consists of {} nodes'.format(node_count + 10))
         cluster = deploy_cluster(args, node_count + 10)
 
