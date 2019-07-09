@@ -15,5 +15,6 @@ check_program mvn || {
 
 # Compiling HBase
 echo "Compiling HBase"
-mvn clean -Dhttps.protocols=TLSv1.2 package -DskipTests
+# mvn clean -Dhttps.protocols=TLSv1.2 package -DskipTests
+mvn clean install -Dhttps.protocols=TLSv1.2 -DskipTests assembly:single
 echo "HBase has been compiled!"
