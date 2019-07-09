@@ -10,11 +10,17 @@
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
+export HADOOP_HOME=/mnt/extra/ucare-research/hdfs/source/hadoop-dist/target/hadoop-2.7.1
 export HBASE_HOME=/mnt/extra/ucare-research/hbase/source/hbase-home/hbase-1.0.4-SNAPSHOT/
 
 echo "Moving configuration file"
 mv "$HBASE_HOME/conf/hbase-site.xml" "$HBASE_HOME/conf/hbase-site.bak.xml"
 cp "$DIR/conf/hbase-site.xml" "$HBASE_HOME/conf"
+
+echo "Starting HDFS"
+$HADOOP_HOME/sbin/start-dfs.sh
+
+sleep 2
 
 echo "Starting master"
 $HBASE_HOME/bin/start-hbase.sh
