@@ -9,3 +9,17 @@
 
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+
+cmd=$1
+
+sleep 2
+
+export HBASE_HOME=/mnt/extra/ucare-research/hbase/source/hbase-home/hbase-1.0.4-SNAPSHOT/
+
+echo "Moving configuration file"
+mv "$HBASE_HOME/conf/hbase-site.xml" "$HBASE_HOME/conf/hbase-site.bak.xml"
+cp "$DIR/conf/hbase-site.xml" "$HBASE_HOME/conf"
+
+# for ((i = 1; i <= $2; i++)); do
+#   run_datanode $cmd $i
+# done
