@@ -20,6 +20,8 @@ echo "Moving configuration file"
 mv "$HBASE_HOME/conf/hbase-site.xml" "$HBASE_HOME/conf/hbase-site.bak.xml"
 cp "$DIR/conf/hbase-site.xml" "$HBASE_HOME/conf"
 
+$HBASE_HOME/bin/local-master-backup.sh start 2 3 5
+
 # for ((i = 1; i <= $2; i++)); do
 #   run_datanode $cmd $i
 # done
