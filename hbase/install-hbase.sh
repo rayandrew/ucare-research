@@ -23,5 +23,5 @@ check_program mvn || {
 echo "Compiling HBase"
 # mvn clean -Dhttps.protocols=TLSv1.2 package -DskipTests
 mvn clean install -Dhttps.protocols=TLSv1.2 -DskipTests assembly:single
-tar xzvf hbase-assembly/target/hbase-$CURRENT_DIR-SNAPSHOT-bin.tar.gz -C $HBASE_HOME
+tar xzvf hbase-assembly/target/hbase-$HBASE_VERSION-SNAPSHOT-bin.tar.gz -C $HBASE_HOME
 echo "HBase has been compiled!"
