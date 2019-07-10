@@ -60,7 +60,9 @@ if __name__ == '__main__':
 
     assert len(rs_mems) == args.additional_region_server, 'All nodes are not up yet'
 
+    sum_of_rs = sum(rs_mems)
+
     print('Master used ', master_mems)
-    print('List of region server mems used ', rs_mems)
+    print('List of region server mems used ', sum_of_rs)
     print('Total memory used for {} is {} MB'.format(
-        args.additional_region_server, sum(rs_mems) + master_mems))
+        args.additional_region_server, sum_of_rs + master_mems))
