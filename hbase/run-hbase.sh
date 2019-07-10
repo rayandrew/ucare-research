@@ -13,6 +13,9 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 export HADOOP_HOME=/mnt/extra/ucare-research/hdfs/source/hadoop-dist/target/hadoop-2.7.1
 export HBASE_HOME=/mnt/extra/ucare-research/hbase/source/hbase-home/hbase-1.0.4-SNAPSHOT
 
+echo "Kill all Java Process"
+killall java
+
 echo "Moving hadoop configuration file"
 mv "$HADOOP_HOME/etc/hadoop/core-site.xml" "$HADOOP_HOME/etc/hadoop/core-site.bak.xml"
 cp "$DIR/../hdfs/conf/core-site.xml" "$HADOOP_HOME/etc/hadoop"
@@ -25,6 +28,7 @@ mv "$HBASE_HOME/conf/hbase-site.xml" "$HBASE_HOME/conf/hbase-site.bak.xml"
 cp "$DIR/conf/hbase-site.xml" "$HBASE_HOME/conf"
 
 echo "Formatting HDFS"
+rm -rf /tmp/hadoop-hsgucare/dfs/data/current/
 yes Y | $HADOOP_HOME/bin/hdfs namenode -format
 yes Y | $HADOOP_HOME/bin/hdfs datanode -format
 
