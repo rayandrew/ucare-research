@@ -24,6 +24,9 @@ echo "Moving hbase configuration file"
 mv "$HBASE_HOME/conf/hbase-site.xml" "$HBASE_HOME/conf/hbase-site.bak.xml"
 cp "$DIR/conf/hbase-site.xml" "$HBASE_HOME/conf"
 
+echo "Formatting HDFS"
+yes Y | $HADOOP_HOME/bin/hdfs namenode -format
+
 echo "Starting HDFS"
 $HADOOP_HOME/sbin/start-dfs.sh
 
