@@ -15,10 +15,10 @@ export HBASE_HOME=/mnt/extra/ucare-research/hbase/source/hbase-home/hbase-1.0.4-
 
 echo "Moving hadoop configuration file"
 mv "$HADOOP_HOME/etc/hadoop/core-site.xml" "$HADOOP_HOME/etc/hadoop/core-site.bak.xml"
-cp "$DIR/conf/core-site.xml" "$HADOOP_HOME/etc/hadoop"
+cp "$DIR../hadoop/conf/core-site.xml" "$HADOOP_HOME/etc/hadoop"
 
 mv "$HADOOP_HOME/etc/hadoop/hdfs-site.xml" "$HADOOP_HOME/etc/hadoop/hdfs-site.bak.xml"
-cp "$DIR/conf/hdfs-site.xml" "$HADOOP_HOME/etc/hadoop"
+cp "$DIR../hadoop/conf/hdfs-site.xml" "$HADOOP_HOME/etc/hadoop"
 
 echo "Moving hbase configuration file"
 mv "$HBASE_HOME/conf/hbase-site.xml" "$HBASE_HOME/conf/hbase-site.bak.xml"
