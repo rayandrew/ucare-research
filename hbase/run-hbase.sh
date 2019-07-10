@@ -26,6 +26,7 @@ cp "$DIR/conf/hbase-site.xml" "$HBASE_HOME/conf"
 
 echo "Formatting HDFS"
 yes Y | $HADOOP_HOME/bin/hdfs namenode -format
+yes Y | $HADOOP_HOME/bin/hdfs datanode -format
 
 echo "Starting HDFS"
 $HADOOP_HOME/sbin/start-dfs.sh
