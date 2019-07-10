@@ -53,7 +53,7 @@ if __name__ == '__main__':
     # region servers
     for i in range(1, args.additional_region_server + 1):
         line = _read_logs_2(os.path.join(
-            args.logs_dir, 'hbase-{}.log'.format(region_server_name.format(i))))
+            args.logs_dir, 'hbase-{}.log'.format(args.region_server_name.format(i))))
         if line is not None:
             digs = [int(s) for s in line.split(' ') if s.isdigit()]
             rs_mems.append(digs[0])
