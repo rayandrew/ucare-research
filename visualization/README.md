@@ -6,8 +6,8 @@ This project uses matplotlib to plot memory usage of distributed systems
 
 - [x] Cassandra
 - [x] HDFS
-- [ ] HBase
-- [ ] Tensorflow Distributed
+- [x] HBase
+- [x] Tensorflow Distributed
 - [ ] ...
 
 ## Running
