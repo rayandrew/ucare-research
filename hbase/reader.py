@@ -58,10 +58,9 @@ if __name__ == '__main__':
             digs = [int(s) for s in line.split(' ') if s.isdigit()]
             rs_mems.append(digs[0])
 
-    assert len(rs_mems) == args.additional_region_server + \
-        1, 'All nodes are not up yet'
+    assert len(rs_mems) == args.additional_region_server, 'All nodes are not up yet'
 
     print('Master used ', master_mems)
     print('List of region server mems used ', rs_mems)
     print('Total memory used for {} is {} MB'.format(
-        args.additional_region_server + 1, sum(rs_mems) + master_mems))
+        args.additional_region_server, sum(rs_mems) + master_mems))
