@@ -11,7 +11,7 @@ DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
 export HADOOP_HOME=/mnt/extra/ucare-research/hdfs/source/hadoop-dist/target/hadoop-2.7.1
-export HBASE_HOME=/mnt/extra/ucare-research/hbase/source/hbase-home/hbase-1.0.4-SNAPSHOT/
+export HBASE_HOME=/mnt/extra/ucare-research/hbase/source/hbase-home/hbase-1.0.4-SNAPSHOT
 
 echo "Moving configuration file"
 mv "$HBASE_HOME/conf/hbase-site.xml" "$HBASE_HOME/conf/hbase-site.bak.xml"
@@ -30,7 +30,8 @@ sleep 2
 
 params=""
 
-for ((i = 1; i <= $cmd; i++)); do
+# starting from the second as master already deploy the first
+for ((i = 2; i <= $cmd; i++)); do
   if [ -z "$params" ]; then
     params="$i"
   else
