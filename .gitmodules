@@ -7,3 +7,6 @@
 [submodule "hbase/source"]
 	path = hbase/source
 	url = git@github.com:rayandrews/custom-hbase.git
+[submodule "kafka/source"]
+	path = kafka/source
+	url = git@github.com:rayandrews/custom-kafka.git
