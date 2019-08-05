@@ -17,7 +17,7 @@ killall java
 
 echo "Starting Zookeeper"
 # $HADOOP_HOME/sbin/start-dfs.sh
-$KAFKA_HOME/bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
+$KAFKA_HOME/bin/zookeeper-server-start.sh -daemon $KAFKA_HOME/config/zookeeper.properties
 
 sleep 3
 
