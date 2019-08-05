@@ -24,10 +24,10 @@ if __name__ == "__main__":
     for i in range(0, args.server_count):
         # p['broker.id'] = str(int(p['broker.id'].data) + 1)
         p['broker.id'] = str(i)
-        # p['port'] = str(9092 + i)
+        p['port'] = str(9092 + i)
         p['log.dirs'] = '{}/{}'.format('/tmp/kafka-logs', i)
         p['zookeeper.connect'] = 'localhost:2181'
-        p['listeners'] = 'PLAINTEXT://:{}'.format(9092 + i)
+        # p['listeners'] = 'PLAINTEXT://:{}'.format(9092 + i)
         p['delete.topic.enable'] = 'true'
 
         with open('./configs/server-{}.properties'.format(i), 'wb') as f:
