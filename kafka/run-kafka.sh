@@ -13,7 +13,7 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 export KAFKA_HOME=/mnt/extra/ucare-research/kafka/source
 
 echo "Kill all Java Process"
-killall java
+kill -9 $(ps aux | grep "java" | grep -v 'grep' | awk '{print $2}')
 
 echo "Starting Zookeeper"
 # $HADOOP_HOME/sbin/start-dfs.sh
