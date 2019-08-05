@@ -27,9 +27,9 @@ if __name__ == "__main__":
         p['port'] = str(9092 + i)
         p['log.dirs'] = '{}/{}'.format('/tmp/kafka-logs', i)
         # p['zookeeper.connect'] = 'localhost:2181'
-        p['advertised.host.name'] = 'localhost'
+        # p['advertised.host.name'] = 'localhost'
         # p['listeners'] = 'PLAINTEXT://localhost:{}'.format(9092 + i)
-        p['delete.topic.enable'] = 'true'
+        # p['delete.topic.enable'] = 'true'
 
         with open('./configs/server-{}.properties'.format(i), 'wb') as f:
             p.store(f, strip_meta=False)

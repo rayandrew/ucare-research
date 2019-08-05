@@ -19,10 +19,11 @@ echo "Delete logs"
 rm -rf /tmp/zookeeper
 rm -rf /tmp/kafka-logs
 
+mkdir /tmp/kafka-logs
+
 echo "Starting Zookeeper"
 # $HADOOP_HOME/sbin/start-dfs.sh
 $KAFKA_HOME/bin/zookeeper-server-start.sh -daemon $KAFKA_HOME/config/zookeeper.properties
-
 sleep 3
 
 cmd=$1
