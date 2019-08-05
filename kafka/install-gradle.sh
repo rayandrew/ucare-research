@@ -19,7 +19,7 @@ mkdir $TEMP_FOLDER
 sudo mkdir -p $DEST_FOLDER
 
 # download maven
-wget https://gradle.org/next-steps/?version=$GRADLE_VERSION &
+wget https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip &
 format=bin \
   -O $TEMP_FOLDER/gradle-$GRADLE_VERSION-bin.zip
 
