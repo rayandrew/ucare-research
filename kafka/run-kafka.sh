@@ -15,7 +15,8 @@ export KAFKA_HOME=/mnt/extra/ucare-research/kafka/source
 echo "Kill all Java Process"
 kill -9 $(ps aux | grep "java" | grep -v 'grep' | awk '{print $2}')
 
-echo "Delete kafka logs"
+echo "Delete logs"
+rm -rf /tmp/zookeeper
 rm -rf /tmp/kafka-logs
 
 echo "Starting Zookeeper"
