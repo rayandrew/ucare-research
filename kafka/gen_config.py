@@ -22,7 +22,8 @@ if __name__ == "__main__":
     p.load(open(args.config_template, 'rb'), 'utf-8')
 
     for i in range(0, args.server_count):
-        p['broker.id'] = str(int(p['broker.id'].data) + 1)
+        # p['broker.id'] = str(int(p['broker.id'].data) + 1)
+        p['broker.id'] = str(i)
         # p['port'] = str(9092 + i)
         p['log.dirs'] = '{}/{}'.format('/tmp/kafka-logs', i)
         p['zookeeper.connect'] = 'localhost:2181'
