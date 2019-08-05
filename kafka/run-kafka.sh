@@ -10,33 +10,25 @@
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
-export KAFKA_HOME=/mnt/extra/ucare-research/kafka
+export KAFKA_HOME=/mnt/extra/ucare-research/kafka/source
 
 echo "Kill all Java Process"
 killall java
 
 echo "Starting Zookeeper"
 # $HADOOP_HOME/sbin/start-dfs.sh
-./bin/kafka-server-start.sh -daemon config/server.properties
+$KAFKA_HOME/bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
 
-sleep 2
-
-echo "Starting master"
-$HBASE_HOME/bin/start-hbase.sh
+sleep 3
 
 cmd=$1
-sleep 2
 
-params=""
+echo "Generating multiple configs"
 
-# starting from the second as master already deploy the first
-for ((i = 2; i <= $cmd; i++)); do
-  if [ -z "$params" ]; then
-    params="$i"
-  else
-    params="$params $i"
-  fi
+python3 gen_config.py --config_template $KAFKA_HOME/config/server.properties --server_count $cmd
+
+echo "Starting multiple servers"
+
+for ((i = 0; i < $cmd; i++)); do
+  $KAFKA_HOME/bin/kafka-server-start.sh -daemon configs/server-$i.properties
 done
-
-echo "Run RegionServers"
-$HBASE_HOME/bin/local-regionservers.sh start "$params"
