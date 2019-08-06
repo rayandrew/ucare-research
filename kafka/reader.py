@@ -49,4 +49,4 @@ if __name__ == '__main__':
 
     print('List of dn servers used ', servers)
     print('Total memory used for {} nodes is {} MB'.format(
-        args.server_node + 1, sum(servers)))
+        args.server_node, sum(servers)))
