@@ -44,4 +44,4 @@ jupyter lab # open Visualization.ipynb
 
 ## Results
 
-![cassandra-mem-usage](plot2.png)
+![cassandra-mem-usage](plot.png)

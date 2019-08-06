@@ -10,6 +10,7 @@ Projects containing all of my UCARE Research
 - [HDFS](https://github.com/rayandrews/ucare-research/tree/master/hdfs)
 - [Tensorflow](https://github.com/rayandrews/ucare-research/tree/master/tensorflow)
 - [HBase](https://github.com/rayandrews/ucare-research/tree/master/hbase)
+- [Kafka](https://github.com/rayandrews/ucare-research/tree/master/kafka)
 
 #### Result
 
