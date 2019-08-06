@@ -16,6 +16,7 @@ echo "Kill all Java Process"
 kill -9 $(ps aux | grep "java" | grep -v 'grep' | awk '{print $2}')
 
 echo "Delete logs"
+rm -rf $KAFKA_HOME/logs/*
 rm -rf /tmp/zookeeper
 rm -rf /tmp/kafka-logs
 
