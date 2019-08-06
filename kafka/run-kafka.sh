@@ -36,5 +36,5 @@ python3 gen_config.py --config_template $KAFKA_HOME/config/server.properties --s
 echo "Starting multiple servers"
 
 for ((i = 0; i < $cmd; i++)); do
-  $KAFKA_HOME/bin/kafka-server-start.sh -daemon configs/server-$i.properties
+  LOG_DIR=/tmp/kafka-logs/$i $KAFKA_HOME/bin/kafka-server-start.sh -daemon configs/server-$i.properties
 done
