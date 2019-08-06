@@ -29,7 +29,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='[Kafka] - Memory Reader')
 
-    parser.add_argument('--server_node', '-adn', default=5,
+    parser.add_argument('--server_node', '-n', default=5,
                         type=int, help='Kafka Server Count')
     parser.add_argument('--logs_dir', '-cd',
                         default='/tmp/kafka-logs/', help='hdfs logs dir')
@@ -50,4 +50,4 @@ if __name__ == '__main__':
 
     print('List of dn servers used ', servers)
     print('Total memory used for {} nodes is {} MB'.format(
-        args.additional_datanode + 1, sum(servers)))
+        args.server_node + 1, sum(servers)))
