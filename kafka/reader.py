@@ -45,8 +45,7 @@ if __name__ == '__main__':
             digs = [int(s) for s in line.split(' ') if s.isdigit()]
             servers.append(digs[0])
 
-    assert len(servers) == args.server_node + \
-        1, 'All nodes are not up yet'
+    assert len(servers) == args.server_node, 'All nodes are not up yet'
 
     print('List of dn servers used ', servers)
     print('Total memory used for {} nodes is {} MB'.format(
