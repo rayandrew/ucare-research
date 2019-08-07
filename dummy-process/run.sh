@@ -5,6 +5,9 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
 cmd=$1
 
+echo "Kill all Java Process"
+kill -9 $(ps aux | grep "java" | grep -v 'grep' | awk '{print $2}')
+
 echo "Starting multiple programs"
 
 for ((i = 0; i < $cmd; i++)); do
