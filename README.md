@@ -23,6 +23,10 @@ Projects containing all of my UCARE Research
 
 ## Result
 
+### Madvise KSM
+
+![ksm](./madvise-ksm-c/plot.png)
+
 ### Memory Usage Tracker
 
 ![mem-usages](./memory-tracking/visualization/plot.png)
