@@ -10,7 +10,7 @@
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
-export KAFKA_HOME=/mnt/extra/ucare-research/memory-tracking/memory-trackingkafka/source
+export KAFKA_HOME=/mnt/extra/ucare-research/memory-tracking/kafka/source
 
 echo "Kill all Java Process"
 kill -9 $(ps aux | grep "java" | grep -v 'grep' | awk '{print $2}')
