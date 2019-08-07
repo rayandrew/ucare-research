@@ -21,7 +21,7 @@ Projects containing all of my UCARE Research
 - [HBase](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/hbase)
 - [Kafka](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/kafka)
 
-#### Result
+## Result
 
 ### Memory Usage Tracker
 
