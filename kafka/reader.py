@@ -47,6 +47,6 @@ if __name__ == '__main__':
 
     assert len(servers) == args.server_node, 'All nodes are not up yet'
 
-    print('List of dn servers used ', servers)
+    print('List of servers used ', servers)
     print('Total memory used for {} nodes is {} MB'.format(
         args.server_node, sum(servers)))
