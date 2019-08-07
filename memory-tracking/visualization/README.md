@@ -8,6 +8,8 @@ This project uses matplotlib to plot memory usage of distributed systems
 - [x] HDFS
 - [x] HBase
 - [x] Tensorflow Distributed
+- [x] Kafka
+- [x] Dummy Process
 - [ ] ...
 
 ## Running
@@ -19,3 +21,4 @@ jupyter lab
 ## Results
 
 ![mem-usages](plot.png)
+![mem-usages-diff](plot_diff.png)

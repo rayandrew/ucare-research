@@ -20,6 +20,7 @@ Projects containing all of my UCARE Research
 - [Tensorflow](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/tensorflow)
 - [HBase](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/hbase)
 - [Kafka](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/kafka)
+- [Dummy Process](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/dummy-process)
 
 ## Result
 
@@ -30,6 +31,8 @@ Projects containing all of my UCARE Research
 ### Memory Usage Tracker
 
 ![mem-usages](./memory-tracking/visualization/plot.png)
+
+![mem-usages-diff](./memory-tracking/visualization/plot_diff.png)
 
 ### More to come..
 
