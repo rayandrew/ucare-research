@@ -1,162 +1,82 @@
-Starting Cluster consists of 5 nodes
-/usr/local/lib/python3.4/dist-packages/ccmlib/node.py:1501: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+Starting Cluster consists of 10 nodes
+/users/hsgucare/.local/lib/python3.4/site-packages/ccmlib/node.py:1501: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
   data = yaml.load(f)
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [1, 1, 1, 1, 1]
-Total memory used for 5 nodes is : 5 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 10 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-Total memory used for 10 nodes is : 10 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 15 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-Total memory used for 15 nodes is : 16 MB
+List of mem used  [13, 13, 13, 13, 13, 13, 13, 13, 13, 13]
+Total memory used for 10 nodes is : 130 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 20 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [1, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2]
-Total memory used for 20 nodes is : 35 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 25 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 1, 1, 1, 2, 1, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 25 nodes is : 43 MB
+List of mem used  [13, 14, 14, 14, 15, 13, 14, 14, 14, 14, 14, 14, 14, 13, 14, 14, 14, 14, 13, 13]
+Total memory used for 20 nodes is : 276 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 30 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2]
-Total memory used for 30 nodes is : 56 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 35 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2]
-Total memory used for 35 nodes is : 64 MB
+List of mem used  [13, 15, 14, 14, 16, 13, 15, 15, 15, 15, 16, 15, 15, 16, 15, 15, 15, 14, 16, 13, 15, 15, 14, 15, 14, 15, 14, 15, 14, 13]
+Total memory used for 30 nodes is : 439 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 40 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 2, 2, 1]
-Total memory used for 40 nodes is : 76 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 45 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2]
-Total memory used for 45 nodes is : 86 MB
+List of mem used  [13, 16, 14, 15, 16, 13, 16, 15, 16, 16, 15, 16, 16, 16, 16, 15, 16, 15, 15, 13, 16, 15, 15, 16, 13, 15, 15, 16, 14, 14, 15, 16, 15, 16, 15, 13, 15, 16, 15, 14]
+Total memory used for 40 nodes is : 602 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 50 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 50 nodes is : 94 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 55 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1]
-Total memory used for 55 nodes is : 107 MB
+List of mem used  [15, 15, 16, 14, 17, 16, 18, 16, 15, 15, 14, 17, 16, 15, 16, 16, 16, 13, 17, 14, 17, 15, 16, 16, 16, 15, 14, 16, 16, 17, 15, 14, 17, 17, 16, 13, 16, 15, 16, 14, 16, 14, 17, 16, 16, 13, 15, 16, 14, 16]
+Total memory used for 50 nodes is : 775 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 60 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 2, 2, 2, 2]
-Total memory used for 60 nodes is : 114 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 65 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 65 nodes is : 127 MB
+List of mem used  [16, 16, 16, 14, 18, 16, 20, 18, 14, 16, 14, 18, 18, 15, 16, 16, 17, 13, 18, 13, 18, 16, 17, 17, 16, 15, 14, 18, 17, 18, 17, 16, 16, 18, 15, 13, 17, 16, 15, 15, 18, 13, 17, 18, 17, 13, 16, 17, 14, 17, 18, 15, 16, 18, 14, 16, 14, 15, 17, 15]
+Total memory used for 60 nodes is : 964 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 70 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2]
-Total memory used for 70 nodes is : 136 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 75 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 75 nodes is : 145 MB
+List of mem used  [17, 16, 17, 14, 20, 17, 20, 20, 15, 17, 15, 20, 20, 17, 15, 17, 18, 13, 19, 14, 21, 15, 17, 17, 19, 17, 14, 20, 17, 19, 18, 15, 15, 19, 15, 13, 19, 15, 16, 15, 18, 14, 18, 19, 17, 13, 17, 19, 15, 17, 19, 16, 16, 18, 15, 16, 14, 16, 15, 14, 17, 17, 18, 16, 16, 16, 20, 18, 18, 15]
+Total memory used for 70 nodes is : 1174 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 80 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 80 nodes is : 156 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 85 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 85 nodes is : 166 MB
+List of mem used  [17, 17, 20, 14, 21, 18, 21, 21, 15, 17, 15, 21, 21, 15, 15, 17, 18, 13, 21, 13, 21, 16, 17, 20, 17, 16, 14, 20, 18, 21, 18, 15, 15, 18, 16, 13, 19, 15, 15, 15, 20, 15, 20, 20, 17, 13, 18, 19, 14, 19, 19, 15, 16, 19, 15, 17, 14, 16, 16, 14, 17, 18, 18, 15, 16, 16, 19, 19, 17, 15, 20, 19, 19, 17, 17, 14, 19, 19, 20, 18]
+Total memory used for 80 nodes is : 1377 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 90 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 90 nodes is : 176 MB
-Stopping and Remove Cluster
-Delaying 10 secs before spawning another cluster
-
-Starting Cluster consists of 95 nodes
-Delay about 1 minute before trying to read memory logs
-Start reading the logs
-List of mem used  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 95 nodes is : 186 MB
+List of mem used  [18, 14, 15, 20, 21, 18, 21, 22, 15, 15, 20, 21, 21, 20, 20, 16, 13, 18, 21, 18, 22, 21, 22, 22, 15, 15, 19, 17, 21, 17, 16, 22, 15, 22, 20, 13, 13, 16, 18, 20, 18, 19, 17, 21, 14, 18, 21, 16, 14, 19, 22, 15, 21, 17, 18, 20, 21, 15, 17, 18, 16, 15, 16, 19, 14, 21, 22, 19, 17, 15, 19, 21, 18, 15, 20, 22, 16, 16, 16, 15, 14, 21, 17, 19, 15, 16, 14, 16, 16, 14]
+Total memory used for 90 nodes is : 1608 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
 Starting Cluster consists of 100 nodes
 Delay about 1 minute before trying to read memory logs
 Start reading the logs
-List of mem used  [3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-Total memory used for 100 nodes is : 198 MB
+List of mem used  [17, 15, 16, 20, 23, 19, 22, 23, 17, 15, 21, 23, 23, 20, 21, 17, 14, 17, 20, 19, 23, 21, 22, 22, 15, 15, 19, 19, 22, 19, 16, 22, 14, 22, 22, 13, 14, 17, 20, 21, 21, 19, 18, 23, 14, 20, 22, 17, 14, 21, 22, 14, 21, 18, 19, 21, 21, 15, 15, 19, 16, 15, 15, 19, 15, 21, 23, 22, 18, 16, 17, 22, 18, 15, 21, 23, 17, 17, 18, 16, 14, 22, 17, 21, 16, 16, 14, 17, 15, 14, 22, 18, 16, 14, 15, 21, 14, 15, 16, 21]
+Total memory used for 100 nodes is : 1836 MB
 Stopping and Remove Cluster
 Delaying 10 secs before spawning another cluster
 
