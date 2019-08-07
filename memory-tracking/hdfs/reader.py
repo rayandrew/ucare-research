@@ -36,7 +36,7 @@ if __name__ == '__main__':
     parser.add_argument('--datanode_name', '-dn',
                         default='hsgucare-datanode-node-0.j8gc.ucare.emulab.net', help='cluster name')
     parser.add_argument('--logs_dir', '-cd',
-                        default='/mnt/extra/ucare-research/memory-tracking/memory-trackingmemory-tracking/hdfs/source/hadoop-dist/target/hadoop-2.7.1/logs/', help='hdfs logs dir')
+                        default='/mnt/extra/ucare-research/memory-tracking/hdfs/source/hadoop-dist/target/hadoop-2.7.1/logs/', help='hdfs logs dir')
     args = parser.parse_args()
 
     nn_mems = 0

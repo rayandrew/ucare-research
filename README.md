@@ -6,14 +6,14 @@ Projects containing all of my UCARE Research
 
 ### 1. Load balancing
 
-- [Cassandra Single Policy](https://github.com/rayandrews/ucare-research/tree/master/madvise-ksm-c)
+- [Cassandra Single Policy](https://github.com/rayandrews/ucare-research/tree/master/cassandra-single-policy)
 
 ### 2. Memory Deduplication
 
 - [Madvise-KSM in C](https://github.com/rayandrews/ucare-research/tree/master/madvise-ksm-c)
 - Java-KSM **Planned**
 
-### 1. Memory Usage Tracker
+### 3. Memory Usage Tracker
 
 - [Cassandra](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/cassandra)
 - [HDFS](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/hdfs)
@@ -27,7 +27,7 @@ Projects containing all of my UCARE Research
 
 ![mem-usages](./memory-tracking/visualization/plot.png)
 
-### 2. More to come..
+### More to come..
 
 ## Author
 

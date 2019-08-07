@@ -36,7 +36,7 @@ if __name__ == '__main__':
     parser.add_argument('--region_server_name', '-rsn',
                         default='hsgucare-{}-regionserver-node-0.j8gc.ucare.emulab.net', help='cluster name')
     parser.add_argument('--logs_dir', '-cd',
-                        default='/mnt/extra/ucare-research/memory-tracking/memory-trackinghbase/source/hbase-home/hbase-1.0.4-SNAPSHOT/logs', help='hbase logs dir')
+                        default='/mnt/extra/ucare-research/memory-tracking/hbase/source/hbase-home/hbase-1.0.4-SNAPSHOT/logs', help='hbase logs dir')
     args = parser.parse_args()
 
     master_mems = 0
