@@ -1,12 +1,12 @@
-[submodule "hdfs/source"]
-	path = hdfs/source
+[submodule "memory-tracking/hdfs/source"]
+	path = memory-tracking/hdfs/source
 	url = git@github.com:rayandrews/custom-hadoop.git
-[submodule "cassandra/source"]
-	path = cassandra/source
+[submodule "memory-tracking/cassandra/source"]
+	path = memory-tracking/cassandra/source
 	url = git@github.com:rayandrews/custom-cassandra.git
-[submodule "hbase/source"]
-	path = hbase/source
+[submodule "memory-tracking/hbase/source"]
+	path = memory-tracking/hbase/source
 	url = git@github.com:rayandrews/custom-hbase.git
-[submodule "kafka/source"]
-	path = kafka/source
+[submodule "memory-tracking/kafka/source"]
+	path = memory-tracking/kafka/source
 	url = git@github.com:rayandrews/custom-kafka.git

@@ -43,3 +43,7 @@ make profiling-with-madvise array_size=${array_size} num_process=${num_process}
 ```
 make run-without-madvise  =array_size=${array_size} num_process=${num_process}
 ```
+
+## Results
+
+![mem-usage](plot.png)

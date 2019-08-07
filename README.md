@@ -4,19 +4,28 @@ Projects containing all of my UCARE Research
 
 ## Projects
 
+### 1. Load balancing
+
+- [Cassandra Single Policy](https://github.com/rayandrews/ucare-research/tree/master/madvise-ksm-c)
+
+### 2. Memory Deduplication
+
+- [Madvise-KSM in C](https://github.com/rayandrews/ucare-research/tree/master/madvise-ksm-c)
+- Java-KSM **Planned**
+
 ### 1. Memory Usage Tracker
 
-- [Cassandra](https://github.com/rayandrews/ucare-research/tree/master/cassandra)
-- [HDFS](https://github.com/rayandrews/ucare-research/tree/master/hdfs)
-- [Tensorflow](https://github.com/rayandrews/ucare-research/tree/master/tensorflow)
-- [HBase](https://github.com/rayandrews/ucare-research/tree/master/hbase)
-- [Kafka](https://github.com/rayandrews/ucare-research/tree/master/kafka)
+- [Cassandra](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/cassandra)
+- [HDFS](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/hdfs)
+- [Tensorflow](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/tensorflow)
+- [HBase](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/hbase)
+- [Kafka](https://github.com/rayandrews/ucare-research/tree/master/memory-tracking/kafka)
 
 #### Result
 
-### 1. Memory Usage Tracker
+### Memory Usage Tracker
 
-![mem-usages](./visualization/plot.png)
+![mem-usages](./memory-tracking/visualization/plot.png)
 
 ### 2. More to come..
 

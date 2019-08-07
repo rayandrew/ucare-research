@@ -10,8 +10,8 @@
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
-export HADOOP_HOME=/mnt/extra/ucare-research/hdfs/source/hadoop-dist/target/hadoop-2.7.1
-export HBASE_HOME=/mnt/extra/ucare-research/hbase/source/hbase-home/hbase-1.0.4-SNAPSHOT
+export HADOOP_HOME=/mnt/extra/ucare-research/memory-tracking/memory-trackinghdfs/source/hadoop-dist/target/hadoop-2.7.1
+export HBASE_HOME=/mnt/extra/ucare-research/memory-tracking/memory-trackinghbase/source/hbase-home/hbase-1.0.4-SNAPSHOT
 
 echo "Kill all Java Process"
 killall java
