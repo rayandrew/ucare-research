@@ -144,7 +144,7 @@ if __name__ == '__main__':
     parser.add_argument('--node_count', '-nc', default=5,
                         type=int, help='Cassandra Node Count')
     parser.add_argument('--cassandra_dir', '-cd',
-                        default='/mnt/extra/cassandra', help='cassandra source dir')
+                        default='/mnt/extra/ucare-research/cassandra/source', help='cassandra source dir')
     parser.add_argument('--cluster_name', '-cn',
                         default='test', help='cluster name')
     parser.add_argument('--cluster_path', '-cp',
