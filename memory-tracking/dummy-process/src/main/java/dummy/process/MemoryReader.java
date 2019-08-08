@@ -22,8 +22,8 @@ public class MemoryReader implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             try {
 
-//                file = new File("/mnt/extra/holder.txt");
-                file = new File("/Users/rayandrew/.zshrc");
+                file = new File("/mnt/extra/holder.txt");
+//                file = new File("/Users/rayandrew/.zshrc");
                 exists = file.exists();
 
                 System.gc();
