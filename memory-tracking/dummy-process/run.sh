@@ -19,4 +19,4 @@ for ((i = 0; i < $n; i++)); do
   logDir=./logs/$i nohup java -jar build/libs/dummy-process-fat.jar $cmd >/dev/null 2>&1 &
 done
 
-echo "Stopping multiple programs"
+echo "Done bootstrapping multiple programs"
