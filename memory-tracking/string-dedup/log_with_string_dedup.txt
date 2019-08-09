@@ -1,0 +1,3 @@
+List of dups used  [93, 93, 93, 93, 93, 93, 93, 93, 93, 93]
+Total memory used for 10 dups is 930 MB
+
