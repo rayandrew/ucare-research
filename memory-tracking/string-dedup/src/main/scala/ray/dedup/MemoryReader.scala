@@ -14,7 +14,7 @@ class MemoryReader extends Runnable with Logging {
         System.gc()
 
         // sleep for 5 seconds
-        Thread.sleep(5000)
+        Thread.sleep(2000)
 
         if (Files.exists(Paths.get("/mnt/extra/holder.txt"))) {
 

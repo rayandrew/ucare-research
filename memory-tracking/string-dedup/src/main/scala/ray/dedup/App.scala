@@ -3,15 +3,27 @@ package ray.dedup
 import java.util.concurrent._
 import java.util.concurrent.atomic.{AtomicBoolean, AtomicInteger}
 
+import scala.collection.mutable.ListBuffer
+
 object App extends Logging {
   val memoryReaderScheduler = Executors.newSingleThreadScheduledExecutor
 
-  var arr: List[String] = List.fill(10485)("Ray Andrew")
+  var str = new ListBuffer[String]()
 
   def main(args: Array[String]): Unit = {
     info("Starting program")
 
     memoryReaderScheduler.schedule(new MemoryReader(), 1, TimeUnit.SECONDS)
+
+    info("Initiate string buffer")
+
+    for (i <- 1 to 1000) {
+      for (j <- 1 to 2000) {
+        str += "Hello World-" +  i
+      }
+    }
+
+    info("String buffer has been successfully built")
 
     while (true) {
       Thread.sleep(100);
