@@ -16,7 +16,7 @@ class MemoryReader extends Runnable with Logging {
         // sleep for 5 seconds
         Thread.sleep(5000)
 
-        if (Files.exists(Paths.get("/Users/rayandrew/.zshrc"))) {
+        if (Files.exists(Paths.get("/mnt/extra/holder.txt"))) {
 
           val runtime = Runtime.getRuntime
 
