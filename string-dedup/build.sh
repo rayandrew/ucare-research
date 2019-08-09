@@ -5,8 +5,8 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
 cmd=$1
 
-echo "Building dummy program"
+echo "Building program"
 
 gradle build
 
-echo "Finish building the dummy program"
+echo "Finish building the program"

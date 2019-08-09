@@ -32,11 +32,11 @@ nohup python3 deploy.py \
   --cluster_path CLUSTER_PATH >> log.txt &
 ```
 
-3. Preprocess the data
+2. Preprocess the data
 
 Just copy paste it to the csv or create the script
 
-4. Plot the data
+3. Plot the data
 
 ```bash
 jupyter lab # open Visualization.ipynb
