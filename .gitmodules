@@ -10,6 +10,3 @@ url = git@github.com:rayandrews/custom-hadoop.git
 [submodule "memory-tracking/hbase/source"]
 path = memory-tracking/hbase/source
 url = git@github.com:rayandrews/custom-hbase.git
-[submodule "custom-kernel"]
-	path = custom-kernel
-	url = git@github.com:rayandrews/custom-kernel.git
