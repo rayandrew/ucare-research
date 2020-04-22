@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
   while (1)
   {
-    p_s();
+     // p_s();
   }
 
   return 0;
